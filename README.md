@@ -2,7 +2,6 @@
 In this section you can see the mini-projects created in my first months learning code.
 
 ## 1. Tic-Tac-Toe
-**tučně** *kurzíva*
 A complex **tic-tac-toe** where you can choose your own symbols, the size of the field and whether you want to play with your friend or against the computer.
 
 ```
