@@ -1,4 +1,4 @@
-# mini_projects
+# Mini-Projects
 In this section you can see the mini-projects created in my first months learning code.
 
 ## 1. Tic-Tac-Toe
