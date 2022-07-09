@@ -9,8 +9,8 @@ A complex **tic-tac-toe** where you can choose your own symbols, the size of the
  - Czech
 
 ### How to play
- 1. Open the tic_tac_toe file
- 2. Download the .py file or you can just copy the code
+ 1. Open the *tic_tac_toe.py* file
+ 2. Download the file or you can just copy the code
  3. Upload the file to your code editor and "Run"
     **OR**
     You can just use Google Colab (https://colab.research.google.com/)
