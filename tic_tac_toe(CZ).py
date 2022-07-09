@@ -32,7 +32,7 @@ def hrac1_vstup(board, board_size, symbols):
 def hrac2_vstup(board, board_size, symbols, two_players):
     robot = []
     if two_players == 'ano':
-        hrac2 = list(map(int, input('Hraje Hráč č.1. Zadej pozici symbolu v pořadí řádek-sloupec: ').split()))
+        hrac2 = list(map(int, input('Hraje Hráč č.2. Zadej pozici symbolu v pořadí řádek-sloupec: ').split()))
         hrac2 = [i-1 for i in hrac2]
         try:
             if board[hrac2[0]][hrac2[1]] == '.':
