@@ -68,18 +68,18 @@ def win(board, board_size, symbols, hra):
     hra = True
     for iradek in range(board_size[0]):
         for jsloupec in range(board_size[1]):
-            if board[iradek][jsloupec] == board[iradek][jsloupec-1] == board[iradek][jsloupec-2] and board[iradek][jsloupec] in symbols:
+            if board[iradek][jsloupec] == board[iradek][jsloupec-1] == board[iradek][jsloupec-2] and board[iradek][jsloupec] in symbols: #row
                 hra = False
                 symbol = board[iradek][jsloupec]
-            elif board[iradek][jsloupec] == board[iradek-1][jsloupec] == board[iradek-2][jsloupec] and board[iradek][jsloupec] in symbols:
+            elif board[iradek][jsloupec] == board[iradek-1][jsloupec] == board[iradek-2][jsloupec] and board[iradek][jsloupec] in symbols: #column
                 hra = False
                 symbol = board[iradek][jsloupec]
-            elif board[iradek][jsloupec] == board[iradek-1][jsloupec-1] == board[iradek-2][jsloupec-2] and board[iradek][jsloupec] in symbols:
+            elif board[iradek][jsloupec] == board[iradek-1][jsloupec-1] == board[iradek-2][jsloupec-2] and board[iradek][jsloupec] in symbols: #diagonal right to left up
                 hra = False
                 symbol = board[iradek][jsloupec]
-            elif board[iradek][jsloupec] == board[iradek-2][jsloupec-1] == board[iradek-1][jsloupec-2] and board[iradek][jsloupec] in symbols:
+            elif board[iradek-1][jsloupec-1] == board[iradek-2][jsloupec] == board[iradek][jsloupec-2] and board[iradek-1][jsloupec-1] in symbols: #diagonal right to leftdown
                 hra = False
-                symbol = board[iradek][jsloupec]
+                symbol = board[iradek-1][jsloupec-1]
     if hra == False:
         print(f'The winner is the player with {symbol}. Congratulations!')
     return hra
