@@ -5,8 +5,17 @@ In this section you can see the mini-projects created in my first months learnin
 A complex **tic-tac-toe** where you can choose your own symbols, the size of the field and whether you want to play with your friend or against the computer.
 
 ### Versions
-1. English
-2. Czech
+ - English
+ - Czech
+
+### How to play
+ 1. Open the tic_tac_toe file
+ 2. Download the .py file or you can just copy the code
+ 3. Upload the file to your code editor and "Run"
+    **OR**
+    You can just use Google Colab (https://colab.research.google.com/)
+    Create new notebook and paste the code
+    Run the code
 
 ```
 Choose the symbols you want to play with, e.g. "X" "O" "Y" "!"
