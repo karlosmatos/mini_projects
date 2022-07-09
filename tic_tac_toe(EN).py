@@ -32,7 +32,7 @@ def hrac1_vstup(board, board_size, symbols):
 def hrac2_vstup(board, board_size, symbols, two_players):
     robot = []
     if two_players == 'yes':
-        hrac2 = list(map(int, input('Player1 playing. Specify the position of the symbol in row-column order: ').split()))
+        hrac2 = list(map(int, input('Player2 playing. Specify the position of the symbol in row-column order: ').split()))
         hrac2 = [i-1 for i in hrac2]
         try:
             if board[hrac2[0]][hrac2[1]] == '.':
