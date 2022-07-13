@@ -52,3 +52,28 @@ The winner is the player with X. Congratulations!
 
 
 <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/85535e05d1f130b16751c8308cfbb19b.png" alt="tic tac toe">
+
+## 1. User Login
+User login using simple conditions along with the add **new user function** in case of missing data in the list.
+
+### Versions
+ - English
+
+```
+Enter your login credentials: petrmara
+
+Enter your password: password123
+
+You got in
+
+----------------------------------------------------------
+Enter your login credentials: karlosmatos
+
+Enter your password: 1234
+
+Unfortunately, you don't have permission.
+To register your account, type "Yes": yes
+
+Your account has been successfully created :)
+```
+
