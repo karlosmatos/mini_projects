@@ -53,7 +53,7 @@ The winner is the player with X. Congratulations!
 
 <img src="https://img.poki.com/cdn-cgi/image/quality=78,width=600,height=600,fit=cover,f=auto/85535e05d1f130b16751c8308cfbb19b.png" alt="tic tac toe">
 
-## 1. User Login
+## 2. User Login
 User login using simple conditions along with the add **new user function** in case of missing data in the list.
 
 ### Versions
