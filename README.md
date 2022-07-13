@@ -76,4 +76,5 @@ To register your account, type "Yes": yes
 
 Your account has been successfully created :)
 ```
+<img src="https://jetformbuilder.com/wp-content/uploads/2021/10/user-login-02.png" alt="user login">
 
