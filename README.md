@@ -60,16 +60,20 @@ User login using simple conditions along with the **Add New User** function in c
  - English
 
 ```
-Enter your login credentials: petrmara
+Enter your login credentials: 
+petrmara
 
-Enter your password: password123
+Enter your password: 
+password123
 
 You got in
 
 ----------------------------------------------------------
-Enter your login credentials: karlosmatos
+Enter your login credentials: 
+karlosmatos
 
-Enter your password: 1234
+Enter your password: 
+1234
 
 Unfortunately, you don't have permission.
 To register your account, type "Yes": yes
@@ -85,7 +89,8 @@ An algorithm for calculating the ratio of individual words occurring in the text
  - English
 
 ```
-Enter any first sentence to be analyzed: Hello hello Michael, how are you doing
+Enter any first sentence to be analyzed: 
+Hello hello Michael, how are you doing
 
 The word "hello" has 28.57% ratio in the sentence
 The word "michael" has 14.29% ratio in the sentence
