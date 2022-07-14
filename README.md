@@ -78,3 +78,20 @@ Your account has been successfully created :)
 ```
 <img src="https://jetformbuilder.com/wp-content/uploads/2021/10/user-login-02.png" alt="user login">
 
+## 3. Words-to-Sentence ratio
+An algorithm for calculating the ratio of individual words occurring in the text.
+
+### Versions
+ - English
+
+```
+Enter any first sentence to be analyzed: Hello hello Michael, how are you doing
+
+The word "hello" has 28.57% ratio in the sentence
+The word "michael" has 14.29% ratio in the sentence
+The word "how" has 14.29% ratio in the sentence
+The word "are" has 14.29% ratio in the sentence
+The word "you" has 14.29% ratio in the sentence
+The word "doing" has 14.29% ratio in the sentence
+```
+
