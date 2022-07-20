@@ -125,4 +125,31 @@ Video #2: Done
 
 <img src="https://ventsmagazine.com/wp-content/uploads/2020/01/facebook.png" alt="ytb mp3 downloader">
 
+## 5. Blackjack
+**Blackjack** game where you are playing against the computer. The cards are in form of points so number 11 stands for **A** and number 10 for **Q**, **J**, or **K**.
+
+### Versions
+ - English
+
+### How to play
+ 1. Open *blackjack.py* file
+ 2. Download the file or you can just copy the code
+ 3. Upload the file to your code editor and "Run"
+    **OR**
+    You can just use Google Colab (https://colab.research.google.com/)
+    Create new notebook and paste the code
+    Run the code
+
+```
+Players's cards: [10, 8] (Total points: 18)
+Would like to get another card? yes
+Players's cards: [10, 8, 4] (Total points: 22)
+Your score is 22
+Computer is playing...
+Computer's cards: [10, 8] (Total points: 18)
+Computer wins with the score of 18 points.
+```
+
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Blackjack21.jpg" alt="blackjack">
 
