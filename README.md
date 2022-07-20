@@ -109,8 +109,9 @@ Python algorithm for **downloading multiple YouTube videos** separated by a spac
  1. Open *ytb_mp3_downlader.py* file
  2. Download the file or just copy the code
  3. Upload the file or paste the code to your code editor 
- 4. Change the "file_direction" in **row 8** 
- 5. **Run**
+ 4. Instal pytube to your code editor with terminal input: !pip install pytube
+ 5. Change the "file_direction" in **row 8** 
+ 6. **Run**
 
 ```
 Insert YT urls: https://www.youtube.com/watch?v=WTJSt4wP2ME&list=RDGMEMHDXYb1_DDSgDsobPsOFxpAVMWTJSt4wP2ME&start_radio=1 
