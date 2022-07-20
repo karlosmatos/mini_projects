@@ -99,4 +99,29 @@ The word "are" has 14.29% ratio in the sentence
 The word "you" has 14.29% ratio in the sentence
 The word "doing" has 14.29% ratio in the sentence
 ```
+## 4. YouTube MP3 Downloader
+Python algorithm for **downloading multiple YouTube videos** separated by a space into .mp3 versions.
+
+### Versions
+ - English
+
+### How to use this downloader
+ 1. Open *ytb_mp3_downlader.py* file
+ 2. Download the file or just copy the code
+ 3. Upload the file or paste the code to your code editor 
+ 4. Change the "file_direction" in **row 8** 
+ 5. **Run**
+
+```
+Insert YT urls: https://www.youtube.com/watch?v=WTJSt4wP2ME&list=RDGMEMHDXYb1_DDSgDsobPsOFxpAVMWTJSt4wP2ME&start_radio=1 
+https://www.youtube.com/watch?v=dnUQrU4p8wM&list=RDGMEMHDXYb1_DDSgDsobPsOFxpAVMWTJSt4wP2ME&index=3 
+https://www.youtube.com/watch?v=CdXesX6mYUE&list=RDGMEMHDXYb1_DDSgDsobPsOFxpAVMWTJSt4wP2ME&index=4
+
+Video #0: Done
+Video #1: Done
+Video #2: Done
+```
+
+<img src="https://ventsmagazine.com/wp-content/uploads/2020/01/facebook.png" alt="ytb mp3 downloader">
+
 
