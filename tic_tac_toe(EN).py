@@ -1,105 +1,99 @@
 import random
 import time
 
-def print_board(board):
-    for i in board:
-        print(i)
+class Game:
 
-def hrac1_vstup(board, board_size, symbols):
-    hrac1 = list(map(int, input('Player1 playing. Specify the position of the symbol in row-column order: ').split()))
-    hrac1 = [i-1 for i in hrac1]
-    try:
-        if board[hrac1[0]][hrac1[1]] == '.':
-            board[hrac1[0]][hrac1[1]] = symbols[0]
-        else:
-            while board[hrac1[0]][hrac1[1]] != '.':
-                hrac1 = list(map(int, input('This field is already selected or out of play. Try selecting something else: ').split()))
-                hrac1 = [i-1 for i in hrac1]
-            board[hrac1[0]][hrac1[1]] = symbols[0]
-    except IndexError:
-        while IndexError or board[hrac2[0]][hrac2[1]] != '.':
-            hrac2 = list(map(int, input('This field is already selected or out of play. Try selecting something else: ').split()))
-            hrac2 = [i-1 for i in hrac2]
-        board[hrac2[0]][hrac2[1]] = symbols[1]
-    except:
-        while board[hrac1[0]][hrac1[1]] != '.':
-            hrac1 = list(map(int, input('This field is already selected or out of play. Try selecting something else: ').split()))
-            hrac1 = [i-1 for i in hrac1]
-        board[hrac1[0]][hrac1[1]] = symbols[0]    
-    print_board(board)
-    return board
+    def __init__(self, symbols:list , board_size:list , question_two_players:str):
+        self.symbols = symbols
+        self.board_size = board_size
+        self.question_two_players = question_two_players
+        self.board = [['.']*board_size[0] for i in range(board_size[1])]
 
-def hrac2_vstup(board, board_size, symbols, two_players):
-    robot = []
-    if two_players == 'yes':
-        hrac2 = list(map(int, input('Player2 playing. Specify the position of the symbol in row-column order: ').split()))
-        hrac2 = [i-1 for i in hrac2]
+    def print_board(self):
+        for i in self.board:
+            print(i)
+    
+    def select_new_field(self, player:list):
+        player = list(map(int, input('This field is already selected or out of play. Try selecting something else: ').split()))
+        player = [i-1 for i in player]
+    
+    def effort_settlement_player(self, player:list, symbol:str):
+        while IndexError or self.board[player[0]][player[1]] != '.':
+            player = self.select_new_field(player)
+        self.board[player[0]][player[1]] = symbol
+        return self.board
+
+    def player1_entry(self):
+        player1 = list(map(int, input('Player1 playing. Specify the position of the symbol in row-column order: ').split()))
+        player1 = [i-1 for i in player1]
         try:
-            if board[hrac2[0]][hrac2[1]] == '.':
-                board[hrac2[0]][hrac2[1]] = symbols[1]
+            if self.board[player1[0]][player1[1]] == '.':
+                self.board[player1[0]][player1[1]] = self.symbols[0]
             else:
-                while board[hrac2[0]][hrac2[1]] != '.':
-                    hrac2 = list(map(int, input('This field is already selected or out of play. Try selecting something else: ').split()))
-                    hrac2 = [i-1 for i in hrac2]
-                board[hrac2[0]][hrac2[1]] = symbols[1]
-        except IndexError:
-            while IndexError or board[hrac2[0]][hrac2[1]] != '.':
-                hrac2 = list(map(int, input('This field is already selected or out of play. Try selecting something else: ').split()))
-                hrac2 = [i-1 for i in hrac2]
-            board[hrac2[0]][hrac2[1]] = symbols[1]
+                self.effort_settlement_player(player1, self.symbols[0])
         except:
-            while board[hrac2[0]][hrac2[1]] != '.':
-                hrac2 = list(map(int, input('This field is already selected or out of play. Try selecting something else: ').split()))
-                hrac2 = [i-1 for i in hrac2]
-            board[hrac2[0]][hrac2[1]] = symbols[1]    
-        print_board(board)
-        return board
-    else:
-        print('The computer is preparing for its move...')
-        robot = [random.randint(0, board_size[0]) for i in range(board_size[1]-1)]
-        time.sleep(3)
-        while board[robot[0]-1][robot[1]-1] != '.':
-            robot = [random.randint(0, board_size[0]) for i in range(board_size[1]-1)]
-        board[robot[0]-1][robot[1]-1] = symbols[1]
-        print_board(board)
-        return board
+            self.effort_settlement_player(player1, self.symbols[0])   
+        self.print_board()
+        return self.board
 
-def win(board, board_size, symbols, hra):
-    hra = True
-    for iradek in range(board_size[0]):
-        for jsloupec in range(board_size[1]):
-            if board[iradek][jsloupec] == board[iradek][jsloupec-1] == board[iradek][jsloupec-2] and board[iradek][jsloupec] in symbols: #row
-                hra = False
-                symbol = board[iradek][jsloupec]
-            elif board[iradek][jsloupec] == board[iradek-1][jsloupec] == board[iradek-2][jsloupec] and board[iradek][jsloupec] in symbols: #column
-                hra = False
-                symbol = board[iradek][jsloupec]
-            elif board[iradek][jsloupec] == board[iradek-1][jsloupec-1] == board[iradek-2][jsloupec-2] and board[iradek][jsloupec] in symbols: #diagonal right to left up
-                hra = False
-                symbol = board[iradek][jsloupec]
-            elif board[iradek-1][jsloupec-1] == board[iradek-2][jsloupec] == board[iradek][jsloupec-2] and board[iradek-1][jsloupec-1] in symbols: #diagonal right to leftdown
-                hra = False
-                symbol = board[iradek-1][jsloupec-1]
-    if hra == False:
-        print(f'The winner is the player with {symbol}. Congratulations!')
-    return hra
+    def player2_entry(self):
+        robot = []
+        if self.question_two_players == 'yes':
+            player2 = list(map(int, input('Player2 playing. Specify the position of the symbol in row-column order: ').split()))
+            player2 = [i-1 for i in player2]
+            try:
+                if self.board[player2[0]][player2[1]] == '.':
+                    self.board[player2[0]][player2[1]] = self.symbols[1]
+                else:
+                    self.effort_settlement_player(player2, self.symbols[1])
+            except:
+                self.effort_settlement_player(player2, self.symbols[1])   
+        else:
+            print('The computer is preparing for its move...')
+            time.sleep(3)
+            robot = [random.randint(0, self.board_size[0]) for i in range(self.board_size[1]-1)]
+            while self.board[robot[0]-1][robot[1]-1] != '.':
+                robot = [random.randint(0, self.board_size[0]) for i in range(self.board_size[1]-1)]
+            self.board[robot[0]-1][robot[1]-1] = self.symbols[1]
+        self.print_board()
+        return self.board
+
+    def win(self):
+        game_running = True
+        for iradek in range(self.board_size[0]):
+            for jsloupec in range(self.board_size[1]):
+                if self.board[iradek][jsloupec] == self.board[iradek][jsloupec-1] == self.board[iradek][jsloupec-2] and self.board[iradek][jsloupec] in self.symbols: #řádek
+                    game_running = False
+                    symbol = self.board[iradek][jsloupec]
+                elif self.board[iradek][jsloupec] == self.board[iradek-1][jsloupec] == self.board[iradek-2][jsloupec] and self.board[iradek][jsloupec] in self.symbols: #sloupec
+                    game_running = False
+                    symbol = self.board[iradek][jsloupec]
+                elif self.board[iradek][jsloupec] == self.board[iradek-1][jsloupec-1] == self.board[iradek-2][jsloupec-2] and self.board[iradek][jsloupec] in self.symbols: #diagonal zpravo doleva nahoru
+                    game_running = False
+                    symbol = self.board[iradek][jsloupec]
+                elif self.board[iradek-1][jsloupec-1] == self.board[iradek-2][jsloupec] == self.board[iradek][jsloupec-2] and self.board[iradek-1][jsloupec-1] in self.symbols: #diagonal zpravo doleva dolů
+                    game_running = False
+                    symbol = self.board[iradek-1][jsloupec-1]
+        if game_running == False:
+            print(f'The winner is the player with {symbol}. Congratulations!')
+        return game_running
 
 def main():
     symbols = list(map(str, input('Choose the symbols you want to play with, e.g. "X" "O" "Y" "!"\n ').split()))
     board_size = list(map(int, input('Select the size of the board, e.g. 3x3\n').lower().split('x')))
-    board = [['.']*board_size[0] for i in range(board_size[1])]
-    two_players = input('Want a 2-player game? yes | no\n').lower()
-    print_board(board)
-    hra = True
-    while hra:
-        hrac1_vstup(board, board_size, symbols)
-        hra = win(board, board_size, symbols, hra)
-        if hra == False:
+    question_two_players = input('Want a 2-player game? yes | no\n').lower()
+    game = Game(symbols, board_size, question_two_players)
+    game.print_board()
+    game_running = True
+    while game_running:
+        game.player1_entry()
+        game_running = game.win()
+        if game_running == False:
             break
-        hrac2_vstup(board, board_size, symbols, two_players)
-        hra = win(board, board_size, symbols, hra)
+        game.player2_entry()
+        game_running = game.win()
 
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
