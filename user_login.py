@@ -1,38 +1,42 @@
-user_login = [
-    'petrmara',
-    'user_1'
-]
 
-user_password = [
-    'password123',
-    '54321'
-]
+class UserLogin:
 
-login = ''
-password = ''
+    def __init__(self, login:str, password:str):
+        self.login = login
+        self.password = password
+        self.user_login = [
+            'petrmara',
+            'user_1'
+        ]
+        self.user_password = [
+            'password123',
+            '54321'
+        ]
 
-def log_in(login, password, user_login, user_password):
-    if login in user_login:
-        if password in user_password:
-            if user_login.index(login) == user_password.index(password): #check if the indexes in the given lists match
-                print('You got in')
-    else:
-        print("Unfortunately, you don't have permission.")
-        new_user = input('To register your account, type "Yes": ').lower() #query to register a new user
-        return new_user
 
-def add_user(login, password, user_login, user_password, new_user):
-    if new_user == 'yes':
-        user_login.append(login)
-        user_password.append(password)
-        print('Your account has been successfully created :)')
+    def log_in(self):
+        if self.login in self.user_login:
+            if self.password in self.user_password:
+                if self.user_login.index(self.login) == self.user_password.index(self.password): #check if the indexes in the given lists match
+                    print('You got in')
+        else:
+            print("Unfortunately, you don't have permission.")
+            new_user = input('To register your account, type "Yes": ').lower() #query to register a new user
+            return new_user
+
+    def add_user(self, new_user):
+        if new_user == 'yes':
+            self.user_login.append(self.login)
+            self.user_password.append(self.password)
+            print('Your account has been successfully created :)')
 
 def main():
     login = input('Enter your login credentials: ')
     password = input('Enter your password: ')
-    new_user = log_in(login, password, user_login, user_password)
-    add_user(login, password, user_login, user_password, new_user)
-    print(user_login, user_password) #validate credit
+    login = UserLogin(login, password)
+    new_user = login.log_in()
+    login.add_user(new_user)
+    print(login.user_login, login.user_password) #validate credit
 
 
 if __name__ == "__main__":
