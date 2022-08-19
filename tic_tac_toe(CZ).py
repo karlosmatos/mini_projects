@@ -7,7 +7,7 @@ class Game:
         self.symbols = symbols
         self.board_size = board_size
         self.otazka_dva_hraci = otazka_dva_hraci
-        self.board = [['.']*board_size[0] for i in range(board_size[1])]
+        self.board = [['.']*board_size[0] for pole in range(board_size[1])]
 
     def print_board(self):
         for pole in self.board:
