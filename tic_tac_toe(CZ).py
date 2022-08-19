@@ -10,12 +10,12 @@ class Game:
         self.board = [['.']*board_size[0] for i in range(board_size[1])]
 
     def print_board(self):
-        for i in self.board:
-            print(i)
+        for pole in self.board:
+            print(pole)
     
     def vyber_noveho_pole(self, hrac:list):
         hrac = list(map(int, input('Toto pole je už vybrané nebo mimo hrací prostředí. Zkus vybrat něco jiného: ').split()))
-        hrac = [i-1 for i in hrac]
+        hrac = [vstup-1 for vstup in hrac]
     
     def snaha_usazeni_hrace(self, hrac:list, symbol:str):
         while IndexError or self.board[hrac[0]][hrac[1]] != '.':
@@ -25,7 +25,7 @@ class Game:
 
     def hrac1_vstup(self):
         hrac1 = list(map(int, input('Hraje Hráč č.1. Zadej pozici symbolu v pořadí řádek-sloupec: ').split()))
-        hrac1 = [i-1 for i in hrac1]
+        hrac1 = [vstup-1 for vstup in hrac1]
         try:
             if self.board[hrac1[0]][hrac1[1]] == '.':
                 self.board[hrac1[0]][hrac1[1]] = self.symbols[0]
@@ -40,7 +40,7 @@ class Game:
         robot = []
         if self.otazka_dva_hraci == 'ano':                          #Pokud je odpověď na otázku pro 2 hráče 'ano', tak jse algoritmus rozhodne pro funkce hráče2
             hrac2 = list(map(int, input('Hraje Hráč č.2. Zadej pozici symbolu v pořadí řádek-sloupec: ').split()))
-            hrac2 = [i-1 for i in hrac2]
+            hrac2 = [vstup-1 for vstup in hrac2]
             try:
                 if self.board[hrac2[0]][hrac2[1]] == '.':
                     self.board[hrac2[0]][hrac2[1]] = self.symbols[1]
@@ -51,9 +51,9 @@ class Game:
         else:                                                       #Pokud je odpověď na otázku pro 2 hráče jiná než 'ano', tak je hráč2 zastoupen rozhodováním počítače
             print('Počítač se připravuje na svůj tah...')
             time.sleep(3)
-            robot = [random.randint(0, self.board_size[0]) for i in range(self.board_size[1]-1)]
+            robot = [random.randint(0, self.board_size[0]) for pozice in range(self.board_size[1]-1)]
             while self.board[robot[0]-1][robot[1]-1] != '.':
-                robot = [random.randint(0, self.board_size[0]) for i in range(self.board_size[1]-1)]
+                robot = [random.randint(0, self.board_size[0]) for pozice in range(self.board_size[1]-1)]
             self.board[robot[0]-1][robot[1]-1] = self.symbols[1]
         self.print_board()
         return self.board
